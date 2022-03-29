@@ -1,0 +1,18 @@
+#searchBar{
+    z-index:-1;
+    width:99%;
+    height:40px;
+    /* background-color: red; */
+    display:flex;
+    flex-direction: row;
+  }
+  
+  #searchCountry{
+    z-index: 1;
+    width:20%;
+    height:40px;
+    /* background-color:blue; */
+    float:left;
+    margin-left:1%;
+  }
+  

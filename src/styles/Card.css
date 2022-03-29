@@ -1,0 +1,23 @@
+#cardContainer{
+    padding-right:50px;
+    padding-left:50px;
+    /* display:flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center; */
+    background-color:#FBFBFB;
+  }
+
+  #imgcard{
+    width: 240px;
+    height: 178px;
+    background-color:blue;
+  
+    
+  }
+  
+  #just{
+    width: 100%;
+    height: 100%;
+    border-radius: 2px;
+  }
