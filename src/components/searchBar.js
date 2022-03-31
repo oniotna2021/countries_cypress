@@ -22,7 +22,7 @@ function searchBar({setRegion,setSearch }) {
               type="search"
               placeholder="Search for country..."
               aria-label="Search"
-              onChange={(busqueda)=>setSearch(busqueda.target.value)}
+              onChange={(unit)=>setSearch(unit.target.value)}
             />
           </form>
         </div>
@@ -30,7 +30,7 @@ function searchBar({setRegion,setSearch }) {
           <div className="col-md-5" id="filter">
             <select
               name="consulta1"
-              onChange={(selector)=>change(selector.target.value)}
+              onChange={(several)=>change(several.target.value)}
               className="form-select"
               id="categoria"
               required

@@ -22,7 +22,6 @@ function App() {
 
   const regionCountry = data.filter((country) => country.region === region);
  
-
   return (
     <div className="App">
       <div>
@@ -36,6 +35,7 @@ function App() {
                 { region ? (
                       regionCountry.map((country, index) => (
                         <Card
+                        key={index}
                         img={country.flags.png}
                         name={country.name.common}
                         population={country.population}

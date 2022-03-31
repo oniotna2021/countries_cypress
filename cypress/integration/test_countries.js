@@ -1,3 +1,10 @@
+context('Actions', () => {
+    beforeEach(() => {
+      cy.visit('https://localhost:3000')
+    })
+
+})
+
 describe('First Test', () => {
     it('Visits country APP', () => {
       cy.visit('http://localhost:3000')
