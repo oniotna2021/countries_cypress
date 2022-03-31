@@ -16,6 +16,7 @@ function searchBar({setRegion,setSearch }) {
           <form className="search d-flex">
           
             <i className="medium material-icons">search</i>
+            
             <input
               className="form-control me-2"
               name="consulta"
@@ -37,7 +38,7 @@ function searchBar({setRegion,setSearch }) {
             >
               <option value="">Filter by Region...</option>
               <option value="Africa">Africa</option>
-              <option value="Americas">America</option>
+              <option value="Americas">Americas</option>
               <option value="Asia">Asia</option>
               <option value="Europe">Europe</option>
               <option value="Oceania">Oceania</option>
