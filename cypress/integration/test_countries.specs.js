@@ -108,3 +108,33 @@ describe("Prueba de backend", () => {
     ).as("country"); // Alias for interceptor
   });
 });
+
+describe('Cookies test',()=>{
+  it('cookies basic',()=>{
+    cy.getCookies().should('be.empty')
+    cy.setCookie('token','123ABC')
+    cy.setCookie('number','12345')
+    cy.getCookies().should('have.length', 2)
+    cy.getCookies().should('not.be.empty')
+    cy.clearCookies()
+  })
+})
+
+describe('location test',()=>{
+  it('Basic location test',()=>{
+    //cy.url().should('eq', 'http://localhost:3000')
+ 
+    cy.location().should((location)=>{
+      expect(location.hash).to.be.empty
+      // expect(location.href).to.eq('http://localhost:3000/__/#/tests/integration/test_countries.specs.js')
+      expect(location.host).to.eq('localhost:3000')
+      //expect(location.hostName).to.eq('localhost:3000')
+      expect(location.origin).to.eq('http://localhost:3000')
+      // expect(location.pathname).to.eq('/__/#/tests/integration/test_countries.specs.js')
+      expect(location.port).to.eq('3000')
+      expect(location.protocol).to.eq('http:')
+      expect(location.search).to.be.empty
+    })
+  })
+})
+
