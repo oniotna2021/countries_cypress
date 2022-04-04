@@ -1,5 +1,3 @@
-import { clear } from "@testing-library/user-event/dist/clear";
-
 it("Visits country APP FRONT", () => {
   // verify options on select
   cy.visit("http://localhost:3000");
@@ -22,6 +20,7 @@ it("Visits country APP FRONT", () => {
       // "naturalWidth" and "naturalHeight" are set when the image loads
       expect($img[0].naturalWidth).to.be.greaterThan(0);
     }); // some code that test that image is loaded so that it is displaye on the web page
+    
 });
 
 it("Iterate over an array of elements", () => {
@@ -35,6 +34,7 @@ it("Iterate over an array of elements", () => {
       expect(num).to.equal(1);
     });
 });
+
 
 describe("Select test", () => {
   it("Select elements from a list", () => {
@@ -109,33 +109,32 @@ describe("Prueba de backend", () => {
   });
 });
 
-describe('Cookies test',()=>{
-  it('cookies basic',()=>{
-    cy.getCookies().should('be.empty')
-    cy.setCookie('token','123ABC')
-    cy.setCookie('number','12345')
-   
-    cy.getCookies().should('have.length', 2)
-    cy.getCookies().should('not.be.empty')
-    cy.clearCookies()
-  })
-})
+describe("Cookies test", () => {
+  it("cookies basic", () => {
+    cy.getCookies().should("be.empty");
+    cy.setCookie("token", "123ABC");
+    cy.setCookie("number", "12345");
 
-describe('location test',()=>{
-  it('Basic location test',()=>{
+    cy.getCookies().should("have.length", 2);
+    cy.getCookies().should("not.be.empty");
+    cy.clearCookies();
+  });
+});
+
+describe("location test", () => {
+  it("Basic location test", () => {
     //cy.url().should('eq', 'http://localhost:3000')
- 
-    cy.location().should((location)=>{
-      expect(location.hash).to.be.empty
-      // expect(location.href).to.eq('http://localhost:3000/__/#/tests/integration/test_countries.specs.js')
-      expect(location.host).to.eq('localhost:3000')
-      //expect(location.hostName).to.eq('localhost:3000')
-      expect(location.origin).to.eq('http://localhost:3000')
-      // expect(location.pathname).to.eq('/__/#/tests/integration/test_countries.specs.js')
-      expect(location.port).to.eq('3000')
-      expect(location.protocol).to.eq('http:')
-      expect(location.search).to.be.empty
-    })
-  })
-})
 
+    cy.location().should((location) => {
+      expect(location.hash).to.be.empty;
+      // expect(location.href).to.eq('http://localhost:3000/__/#/tests/integration/test_countries.specs.js')
+      expect(location.host).to.eq("localhost:3000");
+      //expect(location.hostName).to.eq('localhost:3000')
+      expect(location.origin).to.eq("http://localhost:3000");
+      // expect(location.pathname).to.eq('/__/#/tests/integration/test_countries.specs.js')
+      expect(location.port).to.eq("3000");
+      expect(location.protocol).to.eq("http:");
+      expect(location.search).to.be.empty;
+    });
+  });
+});
