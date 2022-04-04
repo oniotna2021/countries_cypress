@@ -5,14 +5,26 @@ import Chance from 'chance';
 const chance = Chance();
 
 describe('Amtec drop test front',()=>{
-    it('Login test',()=>{
+    beforeEach('Load homepage',()=>{
         cy.visit('http://front-amtec-drop.herokuapp.com/Login');
+        cy.url().should('include','amtec')
+        cy.title().should('eq','AMTEC')
+        // CSS font verify cy.title().should('have.css','font-family').and(''match',/serif/)
+    })
+
+    it('Login test',()=>{
         cy.get('#email').type('tonyusb@gmail.com')
         cy.get('#password').type('12345')
         cy.get('.btn-success').click()
-        cy.get('.mt-4').should('contain','BIENVENIDO A SOLUCIONES AMTEC')
-        cy.get('.mt-4').contains('BIENVENIDO A SOLUCIONES AMTEC').and('be.visible')
-        cy.get('.mt-4').should('be.visible')
+
+        const hello = cy.get('.mt-4')
+        console.log("Hello")
+        console.log(hello)
+
+        const welcome = cy.get('.mt-4')
+        welcome.should('contain','BIENVENIDO A SOLUCIONES AMTEC')
+        welcome.contains('BIENVENIDO A SOLUCIONES AMTEC').and('be.visible')
+        welcome.should('be.visible')
         
        // not working cy.get('.products').children().should('contains','CARRITO')
         
