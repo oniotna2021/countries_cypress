@@ -10,7 +10,7 @@ describe('Amtec drop test front',()=>{
         cy.get('#email').type('tonyusb@gmail.com')
         cy.get('#password').type('12345')
         cy.get('.btn-success').click()
-        cy.get('mt-4').should('contain','BIENVENIDO A SOLUCIONES AMTEC')
+        cy.get('.mt-4').should('contain','BIENVENIDO A SOLUCIONES AMTEC')
         cy.get('.mt-4').contains('BIENVENIDO A SOLUCIONES AMTEC').and('be.visible')
         cy.get('.mt-4').should('be.visible')
         
