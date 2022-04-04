@@ -1,8 +1,5 @@
 /// <reference types="cypress" /> 
 import { clear } from "@testing-library/user-event/dist/clear";
-import Chance from 'chance';
-
-const chance = Chance();
 
 describe('Amtec drop test front',()=>{
     beforeEach('Load homepage',()=>{
@@ -20,11 +17,10 @@ describe('Amtec drop test front',()=>{
         cy.get('input[type="email"]') //Another form to get input email
         cy.get('#email').type('tonyusb@gmail.com')
         cy.get('#password').type('12345')
-        cy.get('.btn-success').click()
+        cy.get('#password').clear()
 
-        const hello = cy.get('.mt-4')
-        console.log("Hello")
-        console.log(hello)
+        cy.get('#password').type('12345')
+        cy.get('.btn-success').click()
 
         const welcome = cy.get('.mt-4')
         welcome.should('contain','BIENVENIDO A SOLUCIONES AMTEC')
@@ -37,7 +33,7 @@ describe('Amtec drop test front',()=>{
 
     })
 
-    it('login test with UI',() => {
+    it('login test with Cypress function',() => {
        cy.login('tonyusb@gmail.com','12345')
        
        cy.server()

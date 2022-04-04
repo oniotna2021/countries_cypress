@@ -114,6 +114,7 @@ describe('Cookies test',()=>{
     cy.getCookies().should('be.empty')
     cy.setCookie('token','123ABC')
     cy.setCookie('number','12345')
+   
     cy.getCookies().should('have.length', 2)
     cy.getCookies().should('not.be.empty')
     cy.clearCookies()
