@@ -6,7 +6,7 @@ const chance = Chance();
 
 describe('Amtec drop test front',()=>{
     beforeEach('Load homepage',()=>{
-        cy.visit('http://front-amtec-drop.herokuapp.com/Login');
+        cy.visit('https://front-amtec-drop.herokuapp.com/Login');
         cy.location('pathname').should('eq','/Login');
         cy.url().should('include','amtec')
         cy.title().should('eq','AMTEC')
