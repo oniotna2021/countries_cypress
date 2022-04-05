@@ -27,6 +27,7 @@
         expect(response).to.have.property('duration')
       })
     })
+
     it('XHR request region Americas',()=>{
       cy.request('https://restcountries.com/v3.1/region/Americas')
       .should((response)=>{
@@ -44,6 +45,7 @@
         expect(response).to.have.property('duration')
       })
     })
+
     it('XHR request region Europe',()=>{
       cy.request('https://restcountries.com/v3.1/region/Europe')
       .should((response)=>{
@@ -61,6 +63,7 @@
         expect(response).to.have.property('duration')
       })
     })
+    
     it('XHR request region Africa',()=>{
       cy.request('https://restcountries.com/v3.1/region/Africa')
       .should((response)=>{

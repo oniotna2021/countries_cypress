@@ -21,7 +21,10 @@ it("Visits country APP FRONT", () => {
       expect($img[0].naturalWidth).to.be.greaterThan(0);
     }); // some code that test that image is loaded so that it is displaye on the web page
     
+    
 });
+
+
 
 it("Iterate over an array of elements", () => {
   cy.wrap(1)
