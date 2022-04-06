@@ -1,6 +1,13 @@
+/// <reference types="cypress" />
+
 it("Visits country APP FRONT", () => {
   // verify options on select
   cy.visit("http://localhost:3000");
+
+  // Alante y atras en el dom renderizado
+  //cy.go("forward")
+  //cy.go("back")
+
   cy.get("b").contains("Where in the world");
   cy.get("form").contains("search");
   cy.get("option").contains("Africa");
@@ -47,6 +54,10 @@ describe("Select test", () => {
     cy.get("#categoria").select("Asia").should("have.value", "Asia");
     cy.get("#categoria").select("Europe").should("have.value", "Europe");
     cy.get("#categoria").select("Oceania").should("have.value", "Oceania");
+    
+    // cy.get("#categoria").check("Oceania")
+    // cy.get("#categoria").uncheck("Oceania")
+  
   });
 });
 

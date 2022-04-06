@@ -1,6 +1,12 @@
+/// <reference types="cypress" />
+
 describe("Failed login", () => {
   beforeEach("load login", () => {
     cy.visit("https://es-la.facebook.com/").reload(true);
+    //ESTABLECE EL VIEW PORT PARA DISTINTOS EQUIPOS
+    // cy.viewport('iphone-xr')    
+    cy.get('[alt="Facebook"]').should('exist')
+
   });
 
   it("user true password true", () => {
@@ -59,13 +65,28 @@ describe("Failed login", () => {
     );
 
     // consulta sincrona
-    
+
     var req = new XMLHttpRequest();
     req.open("GET", "https://backend-amtec-drop.herokuapp.com/", true);
     req.send(null);
-    if (req.status == 200){
-        dump(req.responseText);
-    } 
-    
+    if (req.status == 200) {
+      dump(req.responseText);
+    }
+  });
+
+  it("not found", () => {
+    cy.request({
+      url: "https://www.facebook.com/hello/hello",
+      failOnStatusCode: false,
+    });
+    cy.visit({
+      url: "https://www.facebook.com/hello/hello",
+      failOnStatusCode: false,
+    });
+    cy.get("._4-dp")
+      .click()
+      .should("contain", "Esta página no está disponible")
+      .should("exist")
+      .should('be.visible');
   });
 });

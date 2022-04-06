@@ -1,5 +1,6 @@
 {
-  "baseUrl": "http://localhost:3000",
+  "baseUrl": "https://backend-amtec-drop.herokuapp.com/",
   "WatchForFileChanges": true,
-  "projectId": "yq8zum"
+  "projectId": "yq8zum",
+  "failOnStatusCode": false
 }

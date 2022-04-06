@@ -1,3 +1,4 @@
+/// <reference types="cypress" />
 
   it('visit homepage',()=>{
     cy.visit('http://localhost:3000')
@@ -9,14 +10,7 @@
     //Reload without cache
     cy.reload(true)
   })
-
-  // Local API request
-  // it('Local API request',()=>{
-  //   cy.request('/users/1')
-  //     .its('body')
-  //     .should('deep.eql',{name:'Amir'})
-  // })
-
+  
   describe('network request test',()=>{
     it('XHR request all',()=>{
       cy.request('https://restcountries.com/v3.1/all')
