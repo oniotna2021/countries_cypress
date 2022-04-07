@@ -5,7 +5,12 @@ describe("Failed login", () => {
     cy.visit("https://es-la.facebook.com/").reload(true);
     //ESTABLECE EL VIEW PORT PARA DISTINTOS EQUIPOS
     // cy.viewport('iphone-xr')    
-    cy.get('[alt="Facebook"]').should('exist')
+    cy.get('[alt="Facebook"]').should('exist').and('be.visible')
+    
+    cy.url().then((value) => {
+      cy.log('The current real URL is: ',value);
+    })
+    cy.log('The current real URL is: ', cy.url())
 
   });
 

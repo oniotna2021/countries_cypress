@@ -7,6 +7,8 @@ describe("Amtec drop test front", () => {
     cy.location("pathname").should("eq", "/Login");
     cy.url().should("include", "amtec");
     cy.title().should("eq", "AMTEC");
+
+    cy.location('hash').should("exist")
     // CSS font verify cy.title().should('have.css','font-family').and(''match',/serif/)
   });
 
