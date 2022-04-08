@@ -53,8 +53,8 @@ describe("Front basic test", () => {
       .and("be.visible")
       .click();
 
-    cy.get('[data-testid="username"]').should('exist').and('be.visible');
-    cy.get('[data-testid="password"]').should('exist').and('be.visible');
+    //cy.get('[data-testid="username"]').should('exist').and('be.visible');
+    //cy.get('[data-testid="password"]').should('exist').and('be.visible');
     
     //Login by token
 

@@ -2,6 +2,7 @@
 
 describe("Failed login", () => {
   beforeEach("load login", () => {
+    
     cy.visit("https://es-la.facebook.com/").reload(true);
     //ESTABLECE EL VIEW PORT PARA DISTINTOS EQUIPOS
     // cy.viewport('iphone-xr')    
@@ -93,5 +94,35 @@ describe("Failed login", () => {
       .should("contain", "Esta página no está disponible")
       .should("exist")
       .should('be.visible');
+  });
+
+  it("false user false password string inyection", () => {
+    cy.get('[data-testid="royal_email"]').type("false'hola'user@gmail.com");
+    cy.get('[data-testid="royal_pass"]').type("12345");
+    cy.get('[data-testid="royal_login_button"]').click();
+    cy.get(".uiHeaderTitle").should(
+      "contain",
+      "Tu solicitud no se pudo procesar"
+    );
+  });
+
+  it("true user true password string inyection", () => {
+    cy.get('[data-testid="royal_email"]').type("321'hola'7258986;--");
+    cy.get('[data-testid="royal_pass"]').type("th14g0_4r0n");
+    cy.get('[data-testid="royal_login_button"]').click();
+    cy.get(".uiHeaderTitle").should(
+      "contain",
+      "Tu solicitud no se pudo procesar"
+    );
+   });
+
+  it("false user false password string inyection", () => {
+    cy.get('[data-testid="royal_email"]').type("false'hola'user@gmail.com");
+    cy.get('[data-testid="royal_pass"]').type("12345");
+    cy.get('[data-testid="royal_login_button"]').click();
+    cy.get(".uiHeaderTitle").should(
+      "contain",
+      "Tu solicitud no se pudo procesar"
+    );
   });
 });

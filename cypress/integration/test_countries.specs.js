@@ -132,6 +132,7 @@ describe("Cookies test", () => {
     cy.getCookies().should("have.length", 2);
     cy.getCookies().should("not.be.empty");
     cy.clearCookies();
+
   });
 });
 
