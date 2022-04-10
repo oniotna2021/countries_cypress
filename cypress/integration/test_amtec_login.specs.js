@@ -1,10 +1,11 @@
 /// <reference types="cypress" />
-/// http://on.cypress.io/intellisense
+
 
 import { clear } from "@testing-library/user-event/dist/clear";
 
 describe("Amtec drop test front", () => {
   beforeEach("Load homepage", () => {
+ 
     cy.visit("https://front-amtec-drop.herokuapp.com/Login");
     cy.viewport(1280, 720);
   });
