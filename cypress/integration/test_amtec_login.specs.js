@@ -169,7 +169,7 @@ describe("Amtec drop test front", () => {
        
        // IMPORTANT !! network request assign get as a variable
        cy.request('http://localhost:4000/api/cliente').as('getClients')
-       cy.wait('@getClients')
+       //cy.wait('@getClients')
      
   })
 
