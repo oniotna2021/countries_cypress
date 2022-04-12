@@ -1,6 +1,12 @@
 {
-  "baseUrl": "https://backend-amtec-drop.herokuapp.com/",
+  "baseUrl": "http://google.com",
   "WatchForFileChanges": true,
   "projectId": "yq8zum",
-  "failOnStatusCode": false
+  "failOnStatusCode": false,
+  "viewportWidth":1500,
+  "viewportHeight":900,
+  "chromeWebSecurity":false,
+  "defaultCommandTimeout":15000,
+  "pageLoadTimeout":9000
+
 }
