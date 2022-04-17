@@ -1,0 +1,18 @@
+[
+    {
+        "email":"rodrigo1@gmail.com",
+        "password":"12345"
+    }, 
+    {
+        "email":"rodrigo2@gmail.com",
+        "password":"12345"
+    },
+    {
+        "email":"rodrigo3@gmail.com",
+        "password":"12345"
+    }, 
+    {
+        "email":"rodrigo4@gmail.com",
+        "password":"12345"
+    }
+]
