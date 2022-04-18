@@ -7,8 +7,5 @@
   "viewportHeight":900,
   "chromeWebSecurity":false,
   "defaultCommandTimeout":15000,
-  "pageLoadTimeout":9000,
-
-  "testFiles": "**/*.feature"
-
+  "pageLoadTimeout":9000
 }
