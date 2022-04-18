@@ -15,7 +15,8 @@ describe("Struture info", () => {
         const password = data.password;
         const datos={
             'url':'https://es-la.facebook.com/',
-            'time':1000
+            'time':1000,
+            'titulo':'Facebook'
         }
     
         master.visitHome(datos)

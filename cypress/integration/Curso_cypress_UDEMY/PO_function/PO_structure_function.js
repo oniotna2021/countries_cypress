@@ -6,7 +6,7 @@ class PO_structure_function {
             cy.visit(datos.url);
             cy.wait(datos.time)
             cy.title()
-            .should('contain', 'Facebook')
+            .should('contain', datos.titulo)
         
    
   }
