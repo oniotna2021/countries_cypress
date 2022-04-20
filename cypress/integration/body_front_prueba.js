@@ -144,23 +144,5 @@ describe("Front bodytech register product", () => {
                 
     });
   
-  
-    // it("pruebas", () => {
-    //   cy.visit({
-    //     url: "https://demoqa.com/text-box",
-    //   });
-    //   cy.get("#userName")
-    //     .type("Antonio"); 
-    // });
-  
-    // it("pruebas2", () => {   
-    //   cy.visit('https://www.google.com/').title().should('eq','Google')
-    //   cy.get('input[name="q"]').type('hola {enter}')
-    // })
-  
-    // it("pruebas3", () => {   
-    //   cy.visit('https://www.google.com/').title().should('eq','Google')
-    //   cy.get('input[name="q"]').type('{pageup}')
-    // });
   });
   
