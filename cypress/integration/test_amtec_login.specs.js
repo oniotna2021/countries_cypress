@@ -180,6 +180,7 @@ describe("Amtec drop test front", () => {
     cy.get('input[name="password"]').type(password);
     cy.get(".btn-success").click();
   });
+  
 });
 
 

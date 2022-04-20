@@ -75,5 +75,10 @@
         expect(response).to.have.property('duration')
       })
     })
-    
+
+    it('Data test udemy',()=>{
+      let datos = cy.request("https://backend-amtec-drop.herokuapp.com/api/producto")
+      datos.its("status").should('equal',200)
+    })
+
   })
