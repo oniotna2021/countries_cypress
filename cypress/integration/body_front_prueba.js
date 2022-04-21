@@ -18,10 +18,10 @@ describe("Front bodytech register product", () => {
         cy.log("The curren url value is: ", value);
       });
       cy.url().should('contains','mybodytech')
-      expect(location.protocol).to.eq("https:");
+
     });
   
-    it("void register stay in page", () => {
+    it.only("void register stay in page", () => {
         cy.visit('https://front-mybodytech-bchx8.ondigitalocean.app/config-products')
         cy.get('#panel > div.MuiAccordionSummary-content > div > p')
             .click({force:true})
@@ -47,7 +47,7 @@ describe("Front bodytech register product", () => {
 
         cy.get('#root > div > div > main > main > div > div > div.row.mt-4 > div:nth-child(1) > div > div > div.MuiCollapse-container.MuiCollapse-entered > div > div > div > div > div > form > div:nth-child(1) > div.col-6.my-auto > div.row.pt-1.d-flex > div > div > label:nth-child(3) > span.MuiButtonBase-root.MuiIconButton-root.jss235.MuiRadio-root.MuiRadio-colorPrimary.MuiIconButton-colorPrimary > span.MuiIconButton-label > input')
             .check({force:true})
-            .should('have.value','Servicio')
+            .should('have.value','servicio')
     });
 
     it("Input test especial chars", () => {
@@ -60,9 +60,9 @@ describe("Front bodytech register product", () => {
         cy.get('#root > div > div > main > main > div > div > div.row.mt-4 > div:nth-child(1) > div > div > div.MuiCollapse-container.MuiCollapse-entered > div > div > div > div > div > form > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div > div > input')
             .type("{leftarrow}{rightarrow}{uparrow}{downarrow}")
             .type("{del}{selectall}{backspace}")
-            .type("{alt}{option}") //these are equivalent
-            .type("{ctrl}{control}") //these are equivalent
-            .type("{meta}{command}{cmd}") //these are equivalent
+            .type("{alt}{option}") 
+            .type("{ctrl}{control}") 
+            .type("{meta}{command}{cmd}")
             .type("{shift}")
             .type("prueba")
             .should("have.value", "prueba")
@@ -74,17 +74,17 @@ describe("Front bodytech register product", () => {
             cy.get('#root > div > div > main > main > div > div > div.row.mt-4 > div:nth-child(1) > div > div > div.MuiCollapse-container.MuiCollapse-entered > div > div > div > div > div > form > div:nth-child(1) > div:nth-child(3) > div > div > div.ql-container.ql-snow')
             .type("{leftarrow}{rightarrow}{uparrow}{downarrow}")
             .type("{del}{selectall}{backspace}")
-            .type("{alt}{option}") //these are equivalent
-            .type("{ctrl}{control}") //these are equivalent
-            .type("{meta}{command}{cmd}") //these are equivalent
+            .type("{alt}{option}") 
+            .type("{ctrl}{control}") 
+            .type("{meta}{command}{cmd}") 
             .type("{shift}")
 
             cy.get('#root > div > div > main > main > div > div > div.row.mt-4 > div:nth-child(1) > div > div > div.MuiCollapse-container.MuiCollapse-entered > div > div > div > div > div > form > div:nth-child(1) > div:nth-child(4) > div > div > textarea')
             .type("{leftarrow}{rightarrow}{uparrow}{downarrow}")
             .type("{del}{selectall}{backspace}")
-            .type("{alt}{option}") //these are equivalent
-            .type("{ctrl}{control}") //these are equivalent
-            .type("{meta}{command}{cmd}") //these are equivalent
+            .type("{alt}{option}") 
+            .type("{ctrl}{control}") 
+            .type("{meta}{command}{cmd}") 
             .type("{shift}")
             .type("prueba")
             .should("have.value", "prueba")
@@ -96,9 +96,9 @@ describe("Front bodytech register product", () => {
             cy.get('#root > div > div > main > main > div > div > div.row.mt-4 > div:nth-child(1) > div > div > div.MuiCollapse-container.MuiCollapse-entered > div > div > div > div > div > form > div:nth-child(1) > div:nth-child(5) > div > div > div > input')
             .type("{leftarrow}{rightarrow}{uparrow}{downarrow}")
             .type("{del}{selectall}{backspace}")
-            .type("{alt}{option}") //these are equivalent
-            .type("{ctrl}{control}") //these are equivalent
-            .type("{meta}{command}{cmd}") //these are equivalent
+            .type("{alt}{option}") 
+            .type("{ctrl}{control}") 
+            .type("{meta}{command}{cmd}") 
             .type("{shift}")
             .type("prueba")
             .should("have.value", "prueba")
@@ -110,9 +110,9 @@ describe("Front bodytech register product", () => {
             cy.get('#root > div > div > main > main > div > div > div.row.mt-4 > div:nth-child(1) > div > div > div.MuiCollapse-container.MuiCollapse-entered > div > div > div > div > div > form > div:nth-child(1) > div:nth-child(6) > div > div > div > input')
             .type("{leftarrow}{rightarrow}{uparrow}{downarrow}")
             .type("{del}{selectall}{backspace}")
-            .type("{alt}{option}") //these are equivalent
-            .type("{ctrl}{control}") //these are equivalent
-            .type("{meta}{command}{cmd}") //these are equivalent
+            .type("{alt}{option}")
+            .type("{ctrl}{control}") 
+            .type("{meta}{command}{cmd}") 
             .type("{shift}")
             .type("prueba")
             .should("have.value", "prueba")
@@ -136,13 +136,24 @@ describe("Front bodytech register product", () => {
             .click({force:true})
         
         cy.get('#menu-id_segment > div.MuiPaper-root.MuiMenu-paper.MuiPopover-paper.MuiPaper-rounded > ul > li:nth-child(1)')
+            .click({force:true}) 
+
+        cy.get('#mui-component-select-id_segment')
             .click({force:true})
-        
-        cy.get('#root > div > div > main > main > div > div > div.row.mt-4 > div:nth-child(1) > div > div > div.MuiCollapse-container.MuiCollapse-entered > div > div > div > div > div > form > div:nth-child(1) > div:nth-child(7) > div > div')
-            .should('contains','Masivo')    
-            
-                
+
+        cy.get('#menu-id_segment > div.MuiPaper-root.MuiMenu-paper.MuiPopover-paper.MuiPaper-rounded > ul > li:nth-child(2)')
+            .click({force:true}) 
+
+        cy.get('#root > div > div > main > main > div > div > div.row.mt-4 > div:nth-child(1) > div > div > div.MuiCollapse-container.MuiCollapse-entered > div > div > div > div > div > form > div:nth-child(1) > div.col-6.mt-3.px-2.d-flex.justify-content-between.align-items-center > div:nth-child(2) > span > span.MuiButtonBase-root.MuiIconButton-root.jss235.MuiSwitch-switchBase.jss232.MuiSwitch-colorSecondary > span > input')
+            .click({force:true}) 
+
+        cy.get(' #panel > div > div:nth-child(2) > span > span.MuiButtonBase-root.MuiIconButton-root.jss235.MuiSwitch-switchBase.jss232.MuiSwitch-colorSecondary.jss236.Mui-checked.jss233 > span > input')
+            .click({force:true}) 
+
+        cy.get('#root > div > div > main > main > div > div > div.row.mt-4 > div:nth-child(1) > div > div > div.MuiCollapse-container.MuiCollapse-entered > div > div > div > div > div > form > div:nth-child(1) > div:nth-child(9) > div > div > div.MuiCollapse-container.MuiCollapse-entered > div > div > div > div > div > div > div.col-12 > div > div.col-4.my-auto.px-0')
+            .should('not.be','visible')
+
     });
   
-  });
+  })
   
